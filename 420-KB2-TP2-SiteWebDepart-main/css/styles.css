@@ -1,219 +1,209 @@
- /* Remettre à zéro les marges de tous éléments pour contrecarrer les valeurs par défaut prédéfinies du fureteur */
- * {
-     margin: 0px;
-     padding: 0px;
-     box-sizing: border-box;
- }
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
 
- /* Classe pour la mise en page utilisant les "flexbox" */
- .page {
-     /* disposition verticale des sections header, main et footer */
-     display: flex;
-     flex-direction: column;
-     height: 100vh;
-     /* 100% de la hauteur du viewport pour assurer la réactivité verticale */
-     gap: var(--gap);
-     padding: var(--gap);
+.page {
 
-     .favicon {
-         height: 32px;
-         width: 32px;
-     }
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 
-     .header,
-     .footer {
-         font-size: 1.5em;
-         font-weight: bolder;
-         display: flex;
-         gap: 8px;
-         align-items: center;
+    gap: var(--gap);
+    padding: var(--gap);
 
-         .menu {
-             /* disposition horizontale des items de menu */
-             display: flex;
-             gap: 30px;
-             flex-wrap: wrap;
-             font-size: 50px;
-             justify-content: left;
-         }
+    .favicon {
+        height: 30px;
+        width: 30px;
 
-         .menuItem {
-             flex-grow: 1;
-             font-size: 0.60em;
-             font-weight: bold;
-             text-decoration: none;
-             color: white;
-             border: none;
+    }
 
-         }
+    .header,
+    .footer {
+        font-size: 1.5em;
+        font-weight: bolder;
+        display: flex;
+        gap: 8px;
+        align-items: center;
 
-         .menuItem:hover {
-             color: black;
-         }
+        .menu {
 
-         .selectedMenuItem {
-             color: rgb(0, 0, 0);
-         }
-     }
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            font-size: 50px;
+            justify-content: left;
+        }
 
-     .main {
-         flex: 1;
-         /* permettre de le formatage flex du parent */
-         min-height: 10vh;
-         /* hauteur minimum relative à la hauteur du viewport*/
+        .menuItem {
+            flex-grow: 1;
+            font-size: 0.60em;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            border: none;
 
-         /* contrecarrer les styles de la classe page */
-         border: none;
-         padding: 0px;
-         background: white;
+        }
 
-         /* Alignement horizontal des éléments enfants */
-         display: flex;
-         flex-direction: row;
-         gap: var(--gap);
+        .menuItem:hover {
+            color: black;
+        }
 
-         .scrollSection {
-             overflow-y: auto;
-         }
+        .selectedMenuItem {
+            color: rgb(0, 0, 0);
+        }
+    }
 
-         .content {
-             flex-grow: 1;
+    .main {
+        flex: 1;
+        min-height: 10vh;
+        border: none;
+        padding: 0px;
+        background: white;
+        display: flex;
+        flex-direction: row;
+        gap: var(--gap);
 
-             .bigImage {
-                 background-position: center;
-                 background-repeat: no-repeat;
-                 background-size: cover;
-                 aspect-ratio: 16/9;
-             }
-         }
+        .scrollSection {
+            overflow-y: auto;
+        }
 
-         .justifiedText {
-             text-align: justify;
-             margin-top: var(--gap);
-             font-size: 35px;
-         }
+        .content {
+            flex-grow: 1;
 
-         .ellipsis {
-             white-space: nowrap;
-             overflow: hidden;
-             text-overflow: ellipsis;
-         }
+            .bigImage {
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                aspect-ratio: 16/9;
+            }
+        }
+
+        .justifiedText {
+            text-align: justify;
+            margin-top: var(--gap);
+            font-size: 25px;
+        }
+
+        .ellipsis {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
 
-         .left_Aside {
-             flex: 1;
-             min-width: 170px;
-             max-width: 170px;
-         }
+        .left_Aside {
+            flex: 1;
+            min-width: 100px;
+            max-width: 100px;
+        }
 
-         .right_Aside {
-             flex: 1;
-             min-width: 70px;
-             max-width: 120px;
-         }
+        .right_Aside {
+            flex: 1;
+            min-width: 70px;
+            max-width: 120px;
+        }
 
-     }
+    }
 
-     .main>* {
-         background: white;
-         padding: var(--gap);
-         border: 1px solid gray;
-     }
- }
+    .main>* {
+        background: white;
+        padding: var(--gap);
+        border: 1px solid gray;
+    }
+}
 
- .page>* {
-     /* cibler tout les enfants enfant de l'éléments de classe page */
-     background: rgb(51, 95, 255);
-     padding: var(--gap);
-     border: 1px solid gray;
- }
+.page>* {
+
+    background: rgb(51, 95, 255);
+    padding: var(--gap);
+    border: 1px solid gray;
+}
 
 
- /* disposer une liste d'icone font-awsome vertivalement */
- .iconList {
-     display: flex;
-     flex-direction: column;
-     text-align: center;
-     gap: var(--gap);
- }
 
- /* style pour formater les icones de classe font-awsome */
- .fa-icon {
-     flex: 1;
-     font-size: 2em;
-     color: dodgerblue;
-     cursor: pointer;
- }
+.iconList {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: var(--gap);
+}
 
- /* Changer la couleur de l'élément survolé de classe fa-icon */
- .fa-icon:hover {
-     color: blue;
- }
+.fa-icon {
+    flex: 1;
+    font-size: 2em;
+    color: dodgerblue;
+    cursor: pointer;
+}
 
- @media (min-width:500px) {
+.fa-icon:hover {
+    color: blue;
+}
 
-     /*** classes pour l'apparence de la barre de défilement ***/
-     ::-webkit-scrollbar {
-         border-radius: var(--border-radius);
-         width: var(--scroolbar-with);
-     }
+@media (min-width:500px) {
+    ::-webkit-scrollbar {
+        border-radius: var(--border-radius);
+        width: var(--scroolbar-with);
+    }
 
-     ::-webkit-scrollbar-track {
-         box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-         border-radius: var(--border-radius);
-     }
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: var(--border-radius);
+    }
 
-     ::-webkit-scrollbar-thumb {
-         border-radius: var(--border-radius);
-         box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-     }
+    ::-webkit-scrollbar-thumb {
+        border-radius: var(--border-radius);
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    }
 
-     .momo-trust-display-regular {
-         font-family: "Momo Trust Display", sans-serif;
-         font-weight: 400;
-         font-style: normal;
-         font-size: 1.8em;
-     }
- }
+    .momo-trust-display-regular {
+        font-family: "Momo Trust Display", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.8em;
+    }
+}
 
- .author {
-     text-align: left;
+.author {
+    text-align: left;
 
-     font-size: 40px;
+    font-size: 40px;
 
-     ul {
-         list-style-type: none;
-     }
- }
+    ul {
+        list-style-type: none;
+    }
+}
 
- .titre {
-     font-size: 60px;
-     align-items: center;
-     display: flex;
-     gap: 10px;
-     text-align: center;
- 
- }
+.titre {
+    font-size: 60px;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    text-align: center;
 
- .Bienvenue {
-     font-size: 70px;
-     padding-bottom: 10px;
-     padding-top: 20px;
-     color: rgb(2, 2, 92);
-     text-align: center;
-     text-decoration: underline;
- }
+}
 
- .icone-titre {
-     width: 70px;
-     height: 70px;
+.Bienvenue {
+    font-size: 70px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    color: rgb(2, 2, 92);
+    text-align: center;
+    text-decoration: underline;
+}
 
- }
+.icone-titre {
+    width: 70px;
+    height: 70px;
+
+}
 
 .author {
     text-align: left;
     font-size: 40px;
 }
+
 .author ul {
     list-style-type: none;
     margin: 0;
@@ -236,7 +226,7 @@
     width: 100%;
     margin: auto;
     display: flex;
-    flex-direction: column;  
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 30px;
@@ -247,7 +237,7 @@
 
 @media (min-width: 500px) {
     .rectangle {
-        flex-direction: row; 
+        flex-direction: row;
         height: 800px;
         gap: 80px;
         border-radius: 50px;
@@ -260,119 +250,129 @@
     }
 }
 
-.titre{
-      width: 100%;
+.titre {
+    width: 100%;
     text-align: center;
     display: block;
     margin: 40px 0;
     text-decoration: underline;
 
 }
+
 .playwrite-nz-guides-regular {
-  font-family: "Playwrite NZ Guides", cursive;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Playwrite NZ Guides", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
 
-.rectanglepage{
+.rectanglepage {
     border: 6px solid black;
-    max-width: 1000px;    
+    max-width: 1000px;
     width: 100%;
     border-radius: 25px;
     margin: auto;
     display: flex;
-    flex-direction: column;  
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 40px;
     padding: 40px;
     margin-top: 120px;
-    background-color: white; 
+    background-color: white;
 }
-.titre-centre{
+
+.titre-centre {
     text-align: center;
-    font-size: 60px;
+    font-size: 45px;
     margin-bottom: 30px;
 }
 
-.bloc-texte-image{
+.bloc-texte-image {
     display: flex;
     flex-direction: column;
     gap: 40px;
     align-items: center;
 }
 
-.bloc-texte-image{
-    width: 100%;
-}
-.texte{
+.bloc-texte-image {
     width: 100%;
 }
 
-.imagedroite{
-  width: 100%;
-  max-width: 600px;   
-  height: auto;
-  border-radius: 20px;
-  display: block;
+.texte {
+    width: 100%;
+}
+
+.imagedroite {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 20px;
+    display: block;
 }
 
 
-@media (min-width: 900px){
-  .bloc-texte-image{
-    flex-direction: row;
-    align-items: flex-start;
-  }
-  .bloc-texte-image{
-    flex: 2;
-  }
-  .texte{
-    flex: 2;
-  }
-  .imagedroite{
-    flex: 1;
-    max-width: 520px;
-  }
+@media (min-width: 900px) {
+    .bloc-texte-image {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .bloc-texte-image {
+        flex: 2;
+    }
+
+    .texte {
+        flex: 2;
+    }
+
+    .imagedroite {
+        flex: 1;
+        max-width: 520px;
+    }
 }
 
-.justifiedText{
-  line-height: 56px;
+.justifiedText {
+    line-height: 56px;
 }
 
-.video-container{
+.video-container {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-top: 40px;    
-}
-.video-container iframe{
-  width: 100%;
-  height: 450px;
-  border: 0;
-  border-radius: 15px;  
+    margin-top: 40px;
 }
 
-.left-side-list{
-font-size: 18px;
-padding-left: 18px;
-display: flex;
-flex-direction: column;
-gap: 20px;
+.video-container iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+    border-radius: 15px;
+}
+
+.left-side-list {
+    font-size: 10px;
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 
 
 }
-.left-side-list li{
+
+.left-side-list li {
     margin: 0;
 }
-.imagedroite{
+
+.imagedroite {
     width: 100%;
     max-width: 600px;
     height: auto;
     border-radius: 20px;
     display: block;
 }
-@media (min-width:900px){
-    .imagedroite{
+
+@media (min-width:900px) {
+    .imagedroite {
         flex: 1;
         max-width: 520px;
     }
@@ -380,23 +380,24 @@ gap: 20px;
 
 .left-title {
     display: block;
-    font-size: 32px;   
+    font-size: 25px;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-.menuItem{
+.menuItem {
     display: inline-flex;
     align-items: center;
     gap: 8px;
 }
-.navigIcon{
+
+.navigIcon {
     width: 20px;
     height: 20px;
     object-fit: contain;
 }
 
-.accueilImage{
+.accueilImage {
     width: 100%;
     max-width: 1000px;
     height: auto;
@@ -406,23 +407,36 @@ gap: 20px;
     display: block;
 }
 
-@media (max-width: 650px){
+@media (max-width: 650px) {
 
-  .Bienvenue{
-    font-size: 40px;      
-    padding-bottom: 15px; 
-  }
+    .Bienvenue {
+        font-size: 40px;
+        padding-bottom: 15px;
+    }
 
-  .titre{
-    font-size: 32px;        
-    gap: 8px;
-  }
+    .titre {
+        font-size: 32px;
+        gap: 8px;
+    }
 }
 
-@media (max-width: 500px){
+@media (max-width: 500px) {
 
-  .justifiedText{
-    font-size: 20px;
-    line-height: 32px;
-  }
+    .justifiedText {
+        font-size: 20px;
+        line-height: 32px;
+    }
+}
+
+.page {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.divider {
+    border-right: 5px solid black;
+    height: 150px;
+    margin-right: 10px;
 }
